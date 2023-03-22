@@ -2,9 +2,9 @@
   "name": "nodejsfriscoisdhacapi",
   "version": "1.0.0",
   "description": "",
+  "type": "module",
   "main": "index.js",
-  "scripts": {
-  },
+  "scripts": {},
   "repository": {
     "type": "git",
     "url": "git+https://github.com/KaushikDuddala/NodeJSFriscoISDHACAPI.git"
@@ -17,6 +17,8 @@
   },
   "homepage": "https://github.com/KaushikDuddala/NodeJSFriscoISDHACAPI#readme",
   "dependencies": {
-    "express": "^4.18.2"
+    "express": "^4.18.2",
+    "jssoup": "^0.0.15",
+    "node-fetch-cookies": "^2.0.4"
   }
 }
