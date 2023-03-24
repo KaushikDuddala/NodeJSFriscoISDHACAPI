@@ -13,3 +13,8 @@ If you have any feedback or find any errors, please reach out to me at kaushik.d
 
 - [@KaushikDuddala](https://www.github.com/KaushikDuddala)
 
+
+## License
+
+[GPL-V3](https://www.gnu.org/licenses/gpl-3.0.en.html)
+
