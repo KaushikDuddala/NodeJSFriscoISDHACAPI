@@ -3,9 +3,9 @@ const app = express()
 import { getSchedule } from "./endpoints/schedule.js"
 
 app.get('/', function(req, res) {
-  res.send('{\'message\':\'Welcome to the HAC API\'')
+  res.send('{\'message\':\'Welcome to the HAC API\'}')
 })
-app.get('/schedule', async function(req, res) {
+app.post('/schedule', async function(req, res) {
   let user = req.body.username
   let password = req.body.password
   try {
@@ -18,7 +18,6 @@ app.get('/schedule', async function(req, res) {
     res.status(401)
     res.end()
   }
-
 })
 
 app.listen(8080)
