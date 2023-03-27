@@ -8,14 +8,16 @@ export async function getStudentInfo(user, pass) {
   let page
   await fetch(cookies, "https://hac.friscoisd.org/HomeAccess/Content/Student/Registration.aspx").then(async (data) => page = await data.text())
   const pageParser = new JSDOM(page)
+  const doc = pageParser.window.document
   const pushBack = {
-    "studentName": pageParser.window.document.getElementById("plnMain_lblRegStudentName").textContent,
-    "studentId": pageParser.window.document.getElementById("plnMain_lblRegStudentID").textContent,
-    "studentBirthday": pageParser.window.document.getElementById("plnMain_lblBirthDate").textContent,
-    "studentCounselor": pageParser.window.document.getElementById("plnMain_lblCounselor").textContent,
-    "studentCounselorEmail": pageParser.window.document.getElementsByTagName("a")[0].href.match(/mailto:(.*)/)[1],
-    "studentGrade": pageParser.window.document.getElementById("plnMain_lblGrade").textContent,
-    "studentSchool": pageParser.window.document.getElementById("plnMain_lblBuildingName").textContent
+    "studentName": doc.getElementById("plnMain_lblRegStudentName").textContent,
+    "studentId": doc.getElementById("plnMain_lblRegStudentID").textContent,
+    "studentBirthday": doc.getElementById("plnMain_lblBirthDate").textContent,
+    "studentCounselor": doc.getElementById("plnMain_lblCounselor").textContent,
+    "studentCounselorEmail": doc.getElementsByTagName("a")[0].href.match(/mailto:(.*)/)[1],
+    "studentGrade": doc.getElementById("plnMain_lblGrade").textContent,
+    "studentSchool": doc.getElementById("plnMain_lblBuildingName").textContent,
+    "time": process.hrtime()
   }
   return pushBack
 }

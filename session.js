@@ -3,10 +3,9 @@ import { fetch, CookieJar } from "node-fetch-cookies";
 export async function getSession(user, pas) {
   const pass = encodeURIComponent(pas)
   const mainJar = await new CookieJar();
-
-  let loginResponseScreen = await fetch(mainJar, "https://hac.friscoisd.org/HomeAccess/Account/LogOn")
-  let loginResponseScreenText = JSON.stringify(await loginResponseScreen.text())
-  let requestVerificationToken = loginResponseScreenText.match(/<input name=\\"__RequestVerificationToken\\" type=\\"hidden\\" value=\\"(.*?)\\"/m)[1]
+  let loginResponseScreen;
+  await fetch(mainJar, "https://hac.friscoisd.org/HomeAccess/Account/LogOn").then(async (data) => loginResponseScreen = JSON.stringify(await data.text()))
+  let requestVerificationToken = loginResponseScreen.match(/<input name=\\"__RequestVerificationToken\\" type=\\"hidden\\" value=\\"(.*?)\\"/m)[1]
   const requestHeaders = {
     "User-Agent": "Mozilla/5.0 (X11; Linux x86_64; rv:109.0) Gecko/20100101 Firefox/111.0",
     "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8",
@@ -26,6 +25,6 @@ export async function getSession(user, pas) {
     "body": requestPayload,
     "method": "POST",
     "mode": "cors"
-  }).then((data) => { console.log(data.status) })
+  })
   return mainJar
 };
