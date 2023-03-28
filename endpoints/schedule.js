@@ -24,5 +24,5 @@ export async function getSchedule(username, password) {
     }
     returnDataArray.push(returnData)
   })
-  console.log(returnDataArray)
+  return returnDataArray
 }
