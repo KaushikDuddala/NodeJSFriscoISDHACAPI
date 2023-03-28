@@ -30,8 +30,9 @@ If you have any feedback or find any errors, please reach out to me at kaushik.d
   - [ ] Class/grades
   - [ ] GPA
   - [ ] All Data
-  - [ ] Student Info
-  - [ ] Schedule
+  - [x] Student Info
+  - [x] Schedule
+  - [ ] Cookies
 - [ ] Write documentation
   - [ ] Code Samples
   - [ ] Explanations
