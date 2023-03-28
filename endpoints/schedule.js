@@ -15,7 +15,7 @@ export async function getSchedule(username, password) {
       "className": row.getElementsByTagName("a")[0].textContent,
       "teacherEmail": row.getElementsByTagName('a')[1].href.match(/mailto:(.*)/)[1],
       "classRoom": row.getElementsByTagName("td")[4].textContent,
-      "teacherName": row.getElementsByTagName("td")[3].textContent,
+      "teacherName": row.getElementsByTagName("td")[3].textContent.trimEnd(),
       "classDays": row.getElementsByTagName("td")[5].textContent,
       "classQuarters": row.getElementsByTagName("td")[6].textContent,
       "building": row.getElementsByTagName("td")[7].textContent.trimEnd(),

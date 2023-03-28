@@ -16,7 +16,7 @@ If you have any feedback or find any errors, please reach out to me at kaushik.d
 
 ## License
 
-[GPL-V3](https://www.gnu.org/licenses/gpl-3.0.en.html)
+[CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)
 
 
 ## To-Do
