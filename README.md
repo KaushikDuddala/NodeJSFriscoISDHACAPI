@@ -18,3 +18,21 @@ If you have any feedback or find any errors, please reach out to me at kaushik.d
 
 [GPL-V3](https://www.gnu.org/licenses/gpl-3.0.en.html)
 
+
+## To-Do
+- [ ] Finish endpoints  
+  - [ ] Class/Grades
+  - [ ] GPA
+  - [ ] All Data
+  - [x] Student Info
+  - [x] Schedule
+- [ ] Finish express web server code
+  - [ ] Class/grades
+  - [ ] GPA
+  - [ ] All Data
+  - [ ] Student Info
+  - [ ] Schedule
+- [ ] Write documentation
+  - [ ] Code Samples
+  - [ ] Explanations
+- [x] Get cookies
