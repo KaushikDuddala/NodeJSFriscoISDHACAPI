@@ -6,22 +6,28 @@ import { getStudentInfo } from "./endpoints/studentinfo.js"
 app.use(express.json())
 app.use(express.urlencoded({extended: true}))
 
+async function validateUserAndPass(reqBody){
+  let user
+  let pass
+  try{
+    user = reqBody.username
+    pass = reqBody.password
+  }catch(error){
+    return [400, error]
+  }
+  if(!/[0-9][0-9][0-9][0-9][0-9][0-9]/.test(user)){
+    return [400, "username does not match XXXXXX"]
+  }
+  return [user, pass]
+}
+
 app.get('/', function(req, res) {
   res.send('{\'message\':\'Welcome to the HAC API\'}')
 })
 app.post('/schedule', async function(req, res) {
-  let user
-  let pass
-  try{
-    user = req.body.username
-    pass = req.body.password
-  }catch(error){
-    res.send(`{"error":"${error}"}`)
-    res.status(400)
-    res.end()
-  }
+  const loginDetails = await validateUserAndPass(req.body)
   try {
-    const response = await getSchedule(user, pass)
+    const response = await getSchedule(loginDetails[0], loginDetails[1])
     res.send(response)
     res.status(200)
     res.end()
@@ -29,23 +35,15 @@ app.post('/schedule', async function(req, res) {
     res.send(`{'error':"${error}"`)
     res.status(401)
     res.end()
+    return;
   }
 })
 
 
 app.post('/info', async function(req, res) {
-  let user
-  let pass
-  try{
-    user = req.body.username
-    pass = req.body.password
-  }catch(error){
-    res.send(`{"error":"${error}"}`)
-    res.status(400)
-    res.end()
-  }
+  const loginDetails = await validateUserAndPass(req.body)
   try {
-    const response = await getStudentInfo(user, pass)
+    const response = await getStudentInfo(loginDetails[0], loginDetails[1])
     res.send(response)
     res.status(200)
     res.end()

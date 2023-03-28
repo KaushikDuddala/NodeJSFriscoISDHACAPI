@@ -20,19 +20,19 @@ If you have any feedback or find any errors, please reach out to me at kaushik.d
 
 
 ## To-Do
-- [ ] Finish endpoints  
-  - [ ] Class/Grades
+- [ ] Rework session.js to not do all the requests if a login is invalid (Saving-time)
+- [ ] Finish endpoint scrapers 
+  - [ ] Classes/Grades
   - [ ] GPA
-  - [ ] All Data
   - [x] Student Info
   - [x] Schedule
 - [ ] Finish express web server code
-  - [ ] Class/grades
+  - [ ] Cookies
+  - [ ] Classes/grades
   - [ ] GPA
   - [ ] All Data
   - [x] Student Info
   - [x] Schedule
-  - [ ] Cookies
 - [ ] Write documentation
   - [ ] Code Samples
   - [ ] Explanations

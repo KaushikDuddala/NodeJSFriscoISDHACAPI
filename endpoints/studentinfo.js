@@ -17,7 +17,6 @@ export async function getStudentInfo(user, pass) {
     "studentCounselorEmail": doc.getElementsByTagName("a")[0].href.match(/mailto:(.*)/)[1],
     "studentGrade": doc.getElementById("plnMain_lblGrade").textContent,
     "studentSchool": doc.getElementById("plnMain_lblBuildingName").textContent,
-    "time": process.hrtime()
   }
   return pushBack
 }
