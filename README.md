@@ -22,13 +22,13 @@ If you have any feedback or find any errors, please reach out to me at kaushik.d
 ## To-Do
 - [ ] Rework session.js to not do all the requests if a login is invalid (Saving-time)
 - [ ] Finish endpoint scrapers 
-  - [ ] Classes/Grades
+  - [x] Classes/Grades
   - [ ] GPA
   - [x] Student Info
   - [x] Schedule
 - [ ] Finish express web server code
   - [ ] Cookies
-  - [ ] Classes/grades
+  - [x] Classes/grades
   - [ ] GPA
   - [ ] All Data
   - [x] Student Info
