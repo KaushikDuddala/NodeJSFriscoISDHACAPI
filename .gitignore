@@ -1,5 +1,5 @@
-# Local Netlify folder
 .netlify
 node_modules/
 .replit 
 .replit.nix
+.vscode/
