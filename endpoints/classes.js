@@ -43,7 +43,7 @@ export async function getClasses(username, password){
                     "assignmentGrade": grade,
                     "assignmentDueDate": assignment.getElementsByTagName("td")[0].textContent,
                     "assignmentAssignedDate": assignment.getElementsByTagName("td")[1].textContent.trim(),
-                    "assignmentMaxScore": assignment.getElementsByTagName("td")[5].textContent.
+                    "assignmentMaxScore": assignment.getElementsByTagName("td")[5].textContent.trim()
                 }
                 assignmentsArray.push(assignmentData)
             }catch(error){}})
