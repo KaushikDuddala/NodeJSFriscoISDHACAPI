@@ -11,6 +11,7 @@ export async function getSchedule(username, password) {
   const pageParser = new JSDOM(page)
   let courses = Object.values(pageParser.window.document.getElementsByClassName("sg-asp-table-data-row"))
   courses.forEach(async (row) => {
+    try{
     const returnData = {
       "className": row.getElementsByTagName("a")[0].textContent,
       "teacherEmail": row.getElementsByTagName('a')[1].href.match(/mailto:(.*)/)[1],
@@ -23,6 +24,7 @@ export async function getSchedule(username, password) {
       "status": row.getElementsByTagName("td")[8].textContent.trimEnd()
     }
     returnDataArray.push(returnData)
+  }catch(error){}
   })
   return returnDataArray
 }
